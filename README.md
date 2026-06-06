@@ -27,52 +27,40 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 На сайте не будет онлайн-оплаты. Заказы обсуждаются индивидуально после отправки заявки.
 
 ## Development History
-Ветка 1: feature/project-setup
+Ветка 2: feature/catalog-app
 
-### English
+#### English
 
 Completed tasks:
 
-- initialized local Git repository;
-- configured GitHub repository;
-- created GitFlow workflow (`main`, `develop`, `feature/*`);
-- configured `.gitignore`;
-- created Python virtual environment;
-- installed Django;
-- installed project dependencies:
-  - Django
-  - python-dotenv
-  - psycopg2-binary
-- generated `requirements.txt`;
-- initialized Django project (`config`);
-- configured environment variables support;
-- moved `SECRET_KEY` to `.env`;
-- configured `DEBUG` and `ALLOWED_HOSTS` through environment variables.
+* created Django application `catalog`;
+* connected the application to project settings;
+* installed and configured Django REST Framework;
+* created API endpoint `/api/health/`;
+* implemented `HealthCheckView`;
+* configured URL routing for the application;
+* added the first automated API test;
+* verified successful API response and project startup.
 
-### Result:
+Result:
 
-The project foundation has been prepared and Django is successfully running in the development environment.
+The project now contains a working REST API endpoint and a basic testing infrastructure for further backend development.
 
-### Русский
+---
+
+#### Русский
 
 Выполненные задачи:
 
-- инициализирован локальный Git-репозиторий;
-- настроен репозиторий GitHub;
-- организован GitFlow (`main`, `develop`, `feature/*`);
-- настроен `.gitignore`;
-- создано виртуальное окружение Python;
-- установлен Django;
-- установлены зависимости проекта: 
-  - Django
-  - python-dotenv
-  - psycopg2-binary
-- сформирован файл `requirements.txt`;
-- создан Django-проект (`config`);
-- настроена работа с переменными окружения;
-- ключ `SECRET_KEY` вынесен в `.env`;
-- параметры `DEBUG` и `ALLOWED_HOSTS` переведены на использование переменных окружения.
+* создано приложение `catalog`;
+* приложение подключено к настройкам проекта;
+* установлен и настроен Django REST Framework;
+* создан API-эндпоинт `/api/health/`;
+* реализовано представление `HealthCheckView`;
+* настроена маршрутизация приложения;
+* добавлен первый автоматизированный тест API;
+* проверена корректная работа API и запуск проекта.
 
-### Результат:
+Результат:
 
-Подготовлена базовая инфраструктура проекта и успешно запущено Django-приложение в режиме разработки.
+В проекте появилась базовая REST API-инфраструктура и подготовлена основа для дальнейшей разработки серверной части.
