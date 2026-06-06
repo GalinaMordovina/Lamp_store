@@ -26,11 +26,53 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 
 На сайте не будет онлайн-оплаты. Заказы обсуждаются индивидуально после отправки заявки.
 
-## Planned technologies
+## Development History
+Ветка 1: feature/project-setup
 
-* Python
-* Django
-* PostgreSQL
-* HTML
-* CSS
-* Bootstrap
+### English
+
+Completed tasks:
+
+- initialized local Git repository;
+- configured GitHub repository;
+- created GitFlow workflow (`main`, `develop`, `feature/*`);
+- configured `.gitignore`;
+- created Python virtual environment;
+- installed Django;
+- installed project dependencies:
+  - Django
+  - python-dotenv
+  - psycopg2-binary
+- generated `requirements.txt`;
+- initialized Django project (`config`);
+- configured environment variables support;
+- moved `SECRET_KEY` to `.env`;
+- configured `DEBUG` and `ALLOWED_HOSTS` through environment variables.
+
+### Result:
+
+The project foundation has been prepared and Django is successfully running in the development environment.
+
+### Русский
+
+Выполненные задачи:
+
+- инициализирован локальный Git-репозиторий;
+- настроен репозиторий GitHub;
+- организован GitFlow (`main`, `develop`, `feature/*`);
+- настроен `.gitignore`;
+- создано виртуальное окружение Python;
+- установлен Django;
+- установлены зависимости проекта: 
+  - Django
+  - python-dotenv
+  - psycopg2-binary
+- сформирован файл `requirements.txt`;
+- создан Django-проект (`config`);
+- настроена работа с переменными окружения;
+- ключ `SECRET_KEY` вынесен в `.env`;
+- параметры `DEBUG` и `ALLOWED_HOSTS` переведены на использование переменных окружения.
+
+### Результат:
+
+Подготовлена базовая инфраструктура проекта и успешно запущено Django-приложение в режиме разработки.
