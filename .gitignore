@@ -1,4 +1,5 @@
 venv/
+.venv/
 .env
 **pycache**/
 *.pyc
@@ -10,3 +11,4 @@ staticfiles/
 .pytest_cache/
 .coverage
 htmlcov/
+*.log
