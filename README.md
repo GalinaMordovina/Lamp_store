@@ -27,24 +27,23 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 На сайте не будет онлайн-оплаты. Заказы обсуждаются индивидуально после отправки заявки.
 
 ## Development History
-Ветка 2: feature/catalog-app
+Ветка 3: feature/product-models
 
 #### English
 
 Completed tasks:
 
-* created Django application `catalog`;
-* connected the application to project settings;
-* installed and configured Django REST Framework;
-* created API endpoint `/api/health/`;
-* implemented `HealthCheckView`;
-* configured URL routing for the application;
-* added the first automated API test;
-* verified successful API response and project startup.
+- created `Category` model;
+- added support for nested categories;
+- created `Product` model;
+- added product statuses;
+- added product article field;
+- configured category and product relations;
+- created and applied database migrations;
+- registered models in Django admin panel;
+- verified model display in admin panel.
 
-Result:
-
-The project now contains a working REST API endpoint and a basic testing infrastructure for further backend development.
+Result: The project now contains the main catalog models and is ready for further product management development.
 
 ---
 
@@ -52,15 +51,14 @@ The project now contains a working REST API endpoint and a basic testing infrast
 
 Выполненные задачи:
 
-* создано приложение `catalog`;
-* приложение подключено к настройкам проекта;
-* установлен и настроен Django REST Framework;
-* создан API-эндпоинт `/api/health/`;
-* реализовано представление `HealthCheckView`;
-* настроена маршрутизация приложения;
-* добавлен первый автоматизированный тест API;
-* проверена корректная работа API и запуск проекта.
+- создана модель `Category`;
+- добавлена поддержка вложенных категорий;
+- создана модель `Product`;
+- добавлены статусы товаров;
+- добавлено поле артикула товара;
+- настроена связь товара с категорией;
+- созданы и применены миграции базы данных;
+- модели зарегистрированы в административной панели Django;
+- проверено отображение моделей в админке.
 
-Результат:
-
-В проекте появилась базовая REST API-инфраструктура и подготовлена основа для дальнейшей разработки серверной части.
+Результат: В проекте появились основные модели каталога. Проект готов к дальнейшей разработке управления товарами.
