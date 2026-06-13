@@ -67,6 +67,10 @@ class Product(models.Model):
         blank=True,
         verbose_name="Описание",
     )
+    specifications = models.TextField(
+        blank=True,
+        verbose_name="Характеристики",
+    )
     price = models.DecimalField(
         max_digits=10,
         decimal_places=2,
