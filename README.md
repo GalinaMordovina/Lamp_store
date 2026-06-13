@@ -27,23 +27,23 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 На сайте не будет онлайн-оплаты. Заказы обсуждаются индивидуально после отправки заявки.
 
 ## Development History
-Ветка 4: feature/admin-panel
+Ветка 5: feature/media-setup
 
 #### English
 
 Completed tasks:
 
-* customized Django admin panel for catalog management;
-* configured category administration interface;
-* configured product administration interface;
-* added filtering for products by category, status and project type;
-* added search by product name, article and description;
-* improved product list display in the admin panel;
-* added product specifications field;
-* prepared catalog structure for handmade lamps, furniture, dioramas and custom projects.
+* installed Pillow library;
+* configured media file support;
+* configured MEDIA_URL and MEDIA_ROOT;
+* created ProductImage model;
+* implemented support for multiple images per product;
+* registered ProductImage model in Django admin;
+* verified image upload through the administrative panel.
 
 #### Result:
-The administrative interface became more convenient for managing products and categories. The catalog structure was adapted to the real business needs of the workshop.
+
+The project now supports product image storage and management. The catalog is prepared for displaying real workshop products.
 
 ---
 
@@ -51,15 +51,14 @@ The administrative interface became more convenient for managing products and ca
 
 Выполненные задачи:
 
-* настроена административная панель Django для управления каталогом;
-* настроено отображение категорий в административной панели;
-* настроено отображение товаров в административной панели;
-* добавлены фильтры по категории, статусу и типу проекта;
-* добавлен поиск по названию, артикулу и описанию товара;
-* улучшено отображение списка товаров;
-* добавлено поле характеристик изделия;
-* подготовлена структура каталога для авторских светильников, мебели, диорам и индивидуальных проектов.
+* установлена библиотека Pillow;
+* настроена работа с медиафайлами;
+* настроены параметры MEDIA_URL и MEDIA_ROOT;
+* создана модель ProductImage;
+* реализована поддержка нескольких фотографий для одного товара;
+* модель ProductImage зарегистрирована в административной панели;
+* проверена загрузка изображений через административную панель.
 
 #### Результат:
 
-Административная панель стала удобным инструментом управления каталогом изделий. Структура проекта адаптирована под реальные задачи мастерской.
+Проект получил поддержку хранения и управления фотографиями изделий. Каталог подготовлен для размещения реальных работ мастерской.
