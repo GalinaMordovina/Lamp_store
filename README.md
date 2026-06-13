@@ -27,23 +27,24 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 На сайте не будет онлайн-оплаты. Заказы обсуждаются индивидуально после отправки заявки.
 
 ## Development History
-Ветка 5: feature/media-setup
+Ветка 6: feature/postgresql-setup
 
 #### English
 
 Completed tasks:
 
-* installed Pillow library;
-* configured media file support;
-* configured MEDIA_URL and MEDIA_ROOT;
-* created ProductImage model;
-* implemented support for multiple images per product;
-* registered ProductImage model in Django admin;
-* verified image upload through the administrative panel.
+* configured PostgreSQL database server;
+* created a dedicated database for the project;
+* created a dedicated database user;
+* moved database connection settings to environment variables;
+* configured Django to use PostgreSQL instead of SQLite;
+* applied database migrations to PostgreSQL;
+* created a new administrator account;
+* verified successful operation of the project with PostgreSQL.
 
 #### Result:
 
-The project now supports product image storage and management. The catalog is prepared for displaying real workshop products.
+The project now uses PostgreSQL as the primary database management system and is prepared for further development and deployment.
 
 ---
 
@@ -51,14 +52,15 @@ The project now supports product image storage and management. The catalog is pr
 
 Выполненные задачи:
 
-* установлена библиотека Pillow;
-* настроена работа с медиафайлами;
-* настроены параметры MEDIA_URL и MEDIA_ROOT;
-* создана модель ProductImage;
-* реализована поддержка нескольких фотографий для одного товара;
-* модель ProductImage зарегистрирована в административной панели;
-* проверена загрузка изображений через административную панель.
+* настроен сервер базы данных PostgreSQL;
+* создана отдельная база данных проекта;
+* создан отдельный пользователь базы данных;
+* параметры подключения вынесены в переменные окружения;
+* Django переведён с SQLite на PostgreSQL;
+* выполнены миграции в PostgreSQL;
+* создан новый суперпользователь;
+* проверена корректная работа проекта с PostgreSQL.
 
 #### Результат:
 
-Проект получил поддержку хранения и управления фотографиями изделий. Каталог подготовлен для размещения реальных работ мастерской.
+Проект переведён на PostgreSQL и подготовлен к дальнейшей разработке и будущему развёртыванию.
