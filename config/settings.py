@@ -108,3 +108,6 @@ STATIC_URL = 'static/'
 # Это настройка Django, которая определяет тип поля первичного ключа (id),
 # создаваемого по умолчанию для всех моделей, если я явно не указала id в модели.
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"

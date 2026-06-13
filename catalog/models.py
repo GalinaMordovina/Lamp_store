@@ -106,3 +106,35 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductImage(models.Model):
+    """Фотографии товара."""
+
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="images",
+        verbose_name="Товар",
+    )
+
+    image = models.ImageField(
+        upload_to="products/",
+        verbose_name="Изображение",
+    )
+
+    is_main = models.BooleanField(
+        default=False,
+        verbose_name="Главное изображение",
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+    )
+
+    class Meta:
+        verbose_name = "Фотография товара"
+        verbose_name_plural = "Фотографии товаров"
+
+    def __str__(self):
+        return f"{self.product.name}"

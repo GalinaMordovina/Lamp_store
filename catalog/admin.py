@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from catalog.models import Category, Product
+from catalog.models import Category, Product, ProductImage
 
 
 @admin.register(Category)
@@ -36,3 +36,25 @@ class ProductAdmin(admin.ModelAdmin):
     )
     search_fields = ("name", "article", "description", "specifications")
     ordering = ("name",)
+
+
+@admin.register(ProductImage)
+class ProductImageAdmin(admin.ModelAdmin):
+    """Настройки отображения фотографий товаров в админке."""
+
+    list_display = (
+        "id",
+        "product",
+        "is_main",
+        "created_at",
+    )
+    list_filter = (
+        "is_main",
+    )
+    search_fields = (
+        "product__name",
+        "product__article",
+    )
+    ordering = (
+        "-created_at",
+    )
