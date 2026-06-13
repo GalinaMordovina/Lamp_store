@@ -27,23 +27,23 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 На сайте не будет онлайн-оплаты. Заказы обсуждаются индивидуально после отправки заявки.
 
 ## Development History
-Ветка 3: feature/product-models
+Ветка 4: feature/admin-panel
 
 #### English
 
 Completed tasks:
 
-- created `Category` model;
-- added support for nested categories;
-- created `Product` model;
-- added product statuses;
-- added product article field;
-- configured category and product relations;
-- created and applied database migrations;
-- registered models in Django admin panel;
-- verified model display in admin panel.
+* customized Django admin panel for catalog management;
+* configured category administration interface;
+* configured product administration interface;
+* added filtering for products by category, status and project type;
+* added search by product name, article and description;
+* improved product list display in the admin panel;
+* added product specifications field;
+* prepared catalog structure for handmade lamps, furniture, dioramas and custom projects.
 
-Result: The project now contains the main catalog models and is ready for further product management development.
+#### Result:
+The administrative interface became more convenient for managing products and categories. The catalog structure was adapted to the real business needs of the workshop.
 
 ---
 
@@ -51,14 +51,15 @@ Result: The project now contains the main catalog models and is ready for furthe
 
 Выполненные задачи:
 
-- создана модель `Category`;
-- добавлена поддержка вложенных категорий;
-- создана модель `Product`;
-- добавлены статусы товаров;
-- добавлено поле артикула товара;
-- настроена связь товара с категорией;
-- созданы и применены миграции базы данных;
-- модели зарегистрированы в административной панели Django;
-- проверено отображение моделей в админке.
+* настроена административная панель Django для управления каталогом;
+* настроено отображение категорий в административной панели;
+* настроено отображение товаров в административной панели;
+* добавлены фильтры по категории, статусу и типу проекта;
+* добавлен поиск по названию, артикулу и описанию товара;
+* улучшено отображение списка товаров;
+* добавлено поле характеристик изделия;
+* подготовлена структура каталога для авторских светильников, мебели, диорам и индивидуальных проектов.
 
-Результат: В проекте появились основные модели каталога. Проект готов к дальнейшей разработке управления товарами.
+#### Результат:
+
+Административная панель стала удобным инструментом управления каталогом изделий. Структура проекта адаптирована под реальные задачи мастерской.
