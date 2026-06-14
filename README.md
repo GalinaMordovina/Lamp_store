@@ -27,24 +27,21 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 На сайте не будет онлайн-оплаты. Заказы обсуждаются индивидуально после отправки заявки.
 
 ## Development History
-Ветка 6: feature/postgresql-setup
+Ветка 6: feature/admin-inline-images
 
 #### English
 
 Completed tasks:
 
-* configured PostgreSQL database server;
-* created a dedicated database for the project;
-* created a dedicated database user;
-* moved database connection settings to environment variables;
-* configured Django to use PostgreSQL instead of SQLite;
-* applied database migrations to PostgreSQL;
-* created a new administrator account;
-* verified successful operation of the project with PostgreSQL.
+* implemented inline image management in Django Admin;
+* added ProductImageInline to the product administration page;
+* grouped product fields using fieldsets;
+* improved product creation and editing workflow;
+* enabled image management directly from the product page.
 
 #### Result:
 
-The project now uses PostgreSQL as the primary database management system and is prepared for further development and deployment.
+The administrative panel became more convenient for catalog management. Product information and images can now be managed from a single interface.
 
 ---
 
@@ -52,15 +49,12 @@ The project now uses PostgreSQL as the primary database management system and is
 
 Выполненные задачи:
 
-* настроен сервер базы данных PostgreSQL;
-* создана отдельная база данных проекта;
-* создан отдельный пользователь базы данных;
-* параметры подключения вынесены в переменные окружения;
-* Django переведён с SQLite на PostgreSQL;
-* выполнены миграции в PostgreSQL;
-* создан новый суперпользователь;
-* проверена корректная работа проекта с PostgreSQL.
+* реализовано встроенное управление фотографиями товаров через Django Admin;
+* добавлен ProductImageInline в карточку товара;
+* поля товара сгруппированы с использованием fieldsets;
+* улучшен процесс создания и редактирования товаров;
+* реализовано управление фотографиями непосредственно из карточки товара.
 
 #### Результат:
 
-Проект переведён на PostgreSQL и подготовлен к дальнейшей разработке и будущему развёртыванию.
+Административная панель стала удобнее для наполнения каталога. Информация о товаре и его фотографии теперь управляются из одного интерфейса.

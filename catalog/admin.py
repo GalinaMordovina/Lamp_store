@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from catalog.models import Category, Product, ProductImage
 
 
@@ -7,10 +6,32 @@ from catalog.models import Category, Product, ProductImage
 class CategoryAdmin(admin.ModelAdmin):
     """Настройки отображения категорий в админке."""
 
-    list_display = ("id", "name", "parent", "created_at")
-    list_filter = ("parent",)
-    search_fields = ("name",)
-    ordering = ("name",)
+    list_display = (
+        "id",
+        "name",
+        "parent",
+        "created_at",
+    )
+    list_filter = (
+        "parent",
+    )
+    search_fields = (
+        "name",
+    )
+    ordering = (
+        "name",
+    )
+
+
+class ProductImageInline(admin.TabularInline):
+    """Добавление фотографий товара прямо в карточке товара."""
+
+    model = ProductImage
+    extra = 1
+    fields = (
+        "image",
+        "is_main",
+    )
 
 
 @admin.register(Product)
@@ -34,8 +55,57 @@ class ProductAdmin(admin.ModelAdmin):
         "is_custom",
         "is_author_project",
     )
-    search_fields = ("name", "article", "description", "specifications")
-    ordering = ("name",)
+    search_fields = (
+        "name",
+        "article",
+        "description",
+        "specifications",
+    )
+    ordering = (
+        "name",
+    )
+    fieldsets = (
+        (
+            "Основная информация",
+            {
+                "fields": (
+                    "name",
+                    "article",
+                    "category",
+                )
+            },
+        ),
+        (
+            "Описание изделия",
+            {
+                "fields": (
+                    "description",
+                    "specifications",
+                )
+            },
+        ),
+        (
+            "Продажа",
+            {
+                "fields": (
+                    "price",
+                    "status",
+                )
+            },
+        ),
+        (
+            "Дополнительно",
+            {
+                "fields": (
+                    "is_custom",
+                    "is_author_project",
+                )
+            },
+        ),
+    )
+    inlines = (
+        ProductImageInline,
+    )
 
 
 @admin.register(ProductImage)
