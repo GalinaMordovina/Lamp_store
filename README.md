@@ -29,44 +29,38 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 
 
 ## Development History
-Ветка 6: feature/product-filtering
+Ветка 10: feature/catalog-api-tests
 
 #### English
 
 Completed tasks:
 
-* installed and configured `django-filter`;
-* added product filtering support;
-* created `ProductFilter`;
-* added filtering by category;
-* added filtering by product status;
-* added filtering by custom order flag;
-* added filtering by author project flag;
-* added filtering by minimum and maximum price;
-* added product search by name, article, description and specifications;
-* made catalog API endpoints publicly available for viewing.
+* configured pytest and pytest-django;
+* added API tests for health check endpoint;
+* added tests for category API;
+* added tests for product API;
+* added tests for product detail endpoint;
+* added tests for filtering functionality;
+* added tests for product search;
+* configured PostgreSQL test database support.
 
-Available query parameters:
+Implemented tests:
 
-* `category`
-* `status`
-* `is_custom`
-* `is_author_project`
-* `price_min`
-* `price_max`
-* `search`
-
-Examples:
-
-* GET `/api/products/?category=2`
-* GET `/api/products/?status=available`
-* GET `/api/products/?price_min=1000`
-* GET `/api/products/?price_max=5000`
-* GET `/api/products/?search=вишня`
+* health check endpoint;
+* category list;
+* empty category list;
+* product list;
+* empty product list;
+* product detail;
+* product not found (404);
+* filtering by status;
+* filtering by category;
+* filtering by minimum price;
+* product search by name.
 
 Result:
 
-The catalog API now supports filtering and search, making product browsing more flexible and closer to a real online store experience.
+The project now includes automated API testing with pytest and pytest-django. Core catalog functionality is covered by tests.
 
 ---
 
@@ -74,35 +68,29 @@ The catalog API now supports filtering and search, making product browsing more 
 
 Выполненные задачи:
 
-* установлен и настроен пакет `django-filter`;
-* добавлена поддержка фильтрации товаров;
-* создан фильтр `ProductFilter`;
-* добавлена фильтрация по категории;
-* добавлена фильтрация по статусу товара;
-* добавлена фильтрация по признаку изделия под заказ;
-* добавлена фильтрация по признаку авторского проекта;
-* добавлена фильтрация по минимальной и максимальной цене;
-* добавлен поиск товаров по названию, артикулу, описанию и характеристикам;
-* API каталога сделан публично доступным для просмотра.
+* настроены pytest и pytest-django;
+* добавлены тесты для эндпоинта проверки работоспособности API;
+* добавлены тесты API категорий;
+* добавлены тесты API товаров;
+* добавлены тесты детального просмотра товара;
+* добавлены тесты фильтрации товаров;
+* добавлены тесты поиска товаров;
+* настроена работа тестов с PostgreSQL.
 
-Доступные query-параметры:
+Реализованные тесты:
 
-* `category`
-* `status`
-* `is_custom`
-* `is_author_project`
-* `price_min`
-* `price_max`
-* `search`
-
-Примеры:
-
-* GET `/api/products/?category=2`
-* GET `/api/products/?status=available`
-* GET `/api/products/?price_min=1000`
-* GET `/api/products/?price_max=5000`
-* GET `/api/products/?search=вишня`
+* проверка health endpoint;
+* список категорий;
+* пустой список категорий;
+* список товаров;
+* пустой список товаров;
+* детальная карточка товара;
+* возврат ошибки 404;
+* фильтрация по статусу;
+* фильтрация по категории;
+* фильтрация по минимальной цене;
+* поиск товара по названию.
 
 Результат:
 
-API каталога получил поддержку фильтрации и поиска товаров. Просмотр каталога стал гибче и ближе к функциональности реального интернет-магазина.
+В проекте настроено автоматизированное тестирование API с использованием pytest и pytest-django. Основная функциональность каталога покрыта тестами.
