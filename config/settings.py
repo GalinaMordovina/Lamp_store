@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # сторонние
     "rest_framework",
+    "django_filters",
 
     # наши приложения
     "catalog",
@@ -109,6 +110,27 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+
+REST_FRAMEWORK = {
+    # По умолчанию доступ только у авторизованных пользователей
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+
+    # Используем JWT для аутентификации
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+
+    # Глобальный backend для фильтрации
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    ],
+}
+
 
 # Это настройка Django, которая определяет тип поля первичного ключа (id),
 # создаваемого по умолчанию для всех моделей, если я явно не указала id в модели.
