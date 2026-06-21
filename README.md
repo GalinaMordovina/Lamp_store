@@ -26,22 +26,32 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 
 На сайте не будет онлайн-оплаты. Заказы обсуждаются индивидуально после отправки заявки.
 
+
+
 ## Development History
-Ветка 6: feature/admin-inline-images
+Ветка 6: feature/catalog-api
 
 #### English
 
 Completed tasks:
 
-* implemented inline image management in Django Admin;
-* added ProductImageInline to the product administration page;
-* grouped product fields using fieldsets;
-* improved product creation and editing workflow;
-* enabled image management directly from the product page.
+* created serializers for categories, products and product images;
+* implemented API endpoints for category and product catalog;
+* added product detail endpoint;
+* configured nested serialization for categories and images;
+* added status display field (`status_display`);
+* added parent category name field (`parent_name`);
+* verified API operation through Django REST Framework interface.
 
-#### Result:
+Available endpoints:
 
-The administrative panel became more convenient for catalog management. Product information and images can now be managed from a single interface.
+* GET `/api/categories/`
+* GET `/api/products/`
+* GET `/api/products/<id>/`
+
+Result:
+
+The project now provides a REST API for catalog data. Products, categories and images can be consumed by frontend applications or external services.
 
 ---
 
@@ -49,12 +59,21 @@ The administrative panel became more convenient for catalog management. Product 
 
 Выполненные задачи:
 
-* реализовано встроенное управление фотографиями товаров через Django Admin;
-* добавлен ProductImageInline в карточку товара;
-* поля товара сгруппированы с использованием fieldsets;
-* улучшен процесс создания и редактирования товаров;
-* реализовано управление фотографиями непосредственно из карточки товара.
+* созданы сериализаторы для категорий, товаров и фотографий;
+* реализованы API-эндпоинты каталога;
+* добавлен эндпоинт детального просмотра товара;
+* настроена вложенная сериализация категорий и фотографий;
+* добавлено отображаемое название статуса (`status_display`);
+* добавлено название родительской категории (`parent_name`);
+* выполнена проверка работы API через интерфейс Django REST Framework.
 
-#### Результат:
+Доступные эндпоинты:
 
-Административная панель стала удобнее для наполнения каталога. Информация о товаре и его фотографии теперь управляются из одного интерфейса.
+* GET `/api/categories/`
+* GET `/api/products/`
+* GET `/api/products/<id>/`
+
+Результат:
+
+Проект получил полноценный REST API каталога товаров. Данные могут использоваться фронтендом, мобильным приложением или внешними сервисами.
+
