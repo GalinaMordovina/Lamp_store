@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     # наши приложения
     "catalog",
+    "orders",
 ]
 
 

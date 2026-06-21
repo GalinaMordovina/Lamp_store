@@ -29,38 +29,31 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 
 
 ## Development History
-Ветка 10: feature/catalog-api-tests
+Ветка 11: feature/orders
 
 #### English
 
 Completed tasks:
 
-* configured pytest and pytest-django;
-* added API tests for health check endpoint;
-* added tests for category API;
-* added tests for product API;
-* added tests for product detail endpoint;
-* added tests for filtering functionality;
-* added tests for product search;
-* configured PostgreSQL test database support.
+* created `orders` application;
+* added `OrderRequest` model;
+* added request type choices:
 
-Implemented tests:
+  * leave a request;
+  * discuss an order;
+  * check availability;
+  * order a similar product;
+* added request status choices;
+* added customer contact fields;
+* added personal data agreement field;
+* connected order requests with products;
+* created and applied database migrations;
+* registered order requests in Django Admin;
+* verified manual order request creation through the admin panel.
 
-* health check endpoint;
-* category list;
-* empty category list;
-* product list;
-* empty product list;
-* product detail;
-* product not found (404);
-* filtering by status;
-* filtering by category;
-* filtering by minimum price;
-* product search by name.
+#### Result:
 
-Result:
-
-The project now includes automated API testing with pytest and pytest-django. Core catalog functionality is covered by tests.
+The project now supports customer order requests. Requests can be created, stored in PostgreSQL and managed through the administrative panel.
 
 ---
 
@@ -68,29 +61,22 @@ The project now includes automated API testing with pytest and pytest-django. Co
 
 Выполненные задачи:
 
-* настроены pytest и pytest-django;
-* добавлены тесты для эндпоинта проверки работоспособности API;
-* добавлены тесты API категорий;
-* добавлены тесты API товаров;
-* добавлены тесты детального просмотра товара;
-* добавлены тесты фильтрации товаров;
-* добавлены тесты поиска товаров;
-* настроена работа тестов с PostgreSQL.
+* создано приложение `orders`;
+* добавлена модель `OrderRequest`;
+* добавлены типы заявок:
 
-Реализованные тесты:
+  * оставить заявку;
+  * обсудить заказ;
+  * уточнить наличие;
+  * заказать похожее изделие;
+* добавлены статусы заявок;
+* добавлены поля контактных данных клиента;
+* добавлено поле согласия на обработку персональных данных;
+* настроена связь заявки с товаром;
+* созданы и применены миграции базы данных;
+* заявки зарегистрированы в административной панели Django;
+* проверено ручное создание заявки через админку.
 
-* проверка health endpoint;
-* список категорий;
-* пустой список категорий;
-* список товаров;
-* пустой список товаров;
-* детальная карточка товара;
-* возврат ошибки 404;
-* фильтрация по статусу;
-* фильтрация по категории;
-* фильтрация по минимальной цене;
-* поиск товара по названию.
+#### Результат:
 
-Результат:
-
-В проекте настроено автоматизированное тестирование API с использованием pytest и pytest-django. Основная функциональность каталога покрыта тестами.
+В проект добавлена система клиентских заявок. Заявки сохраняются в PostgreSQL и могут управляться через административную панель.
