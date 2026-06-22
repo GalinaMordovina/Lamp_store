@@ -29,31 +29,33 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 
 
 ## Development History
-Ветка 11: feature/orders
+Ветка 12: feature/order-api
 
 #### English
 
 Completed tasks:
 
-* created `orders` application;
-* added `OrderRequest` model;
-* added request type choices:
+* created API endpoint for customer order requests;
+* implemented serializer for `OrderRequest`;
+* configured validation of personal data agreement;
+* implemented request creation through Django REST Framework;
+* connected order API URLs;
+* configured public access for request creation;
+* tested API through DRF interface.
 
-  * leave a request;
-  * discuss an order;
-  * check availability;
-  * order a similar product;
-* added request status choices;
-* added customer contact fields;
-* added personal data agreement field;
-* connected order requests with products;
-* created and applied database migrations;
-* registered order requests in Django Admin;
-* verified manual order request creation through the admin panel.
+Implemented endpoint:
+
+* `POST /api/orders/`
+
+Validation:
+
+* customer must provide personal data processing agreement;
+* request status is assigned automatically;
+* creation date is assigned automatically.
 
 #### Result:
 
-The project now supports customer order requests. Requests can be created, stored in PostgreSQL and managed through the administrative panel.
+Customers can now submit order requests directly through the API. Submitted requests are stored in PostgreSQL and become available in the administrative panel for further processing.
 
 ---
 
@@ -61,22 +63,24 @@ The project now supports customer order requests. Requests can be created, store
 
 Выполненные задачи:
 
-* создано приложение `orders`;
-* добавлена модель `OrderRequest`;
-* добавлены типы заявок:
+* создан API-эндпоинт для клиентских заявок;
+* реализован сериализатор `OrderRequest`;
+* настроена валидация согласия на обработку персональных данных;
+* реализовано создание заявок через Django REST Framework;
+* подключены маршруты API заявок;
+* настроен публичный доступ к созданию заявок;
+* проведено тестирование через интерфейс DRF.
 
-  * оставить заявку;
-  * обсудить заказ;
-  * уточнить наличие;
-  * заказать похожее изделие;
-* добавлены статусы заявок;
-* добавлены поля контактных данных клиента;
-* добавлено поле согласия на обработку персональных данных;
-* настроена связь заявки с товаром;
-* созданы и применены миграции базы данных;
-* заявки зарегистрированы в административной панели Django;
-* проверено ручное создание заявки через админку.
+Реализованный эндпоинт:
+
+* `POST /api/orders/`
+
+Валидация:
+
+* клиент обязан подтвердить согласие на обработку персональных данных;
+* статус заявки назначается автоматически;
+* дата создания заполняется автоматически.
 
 #### Результат:
 
-В проект добавлена система клиентских заявок. Заявки сохраняются в PostgreSQL и могут управляться через административную панель.
+Пользователь может отправить заявку непосредственно через API. Заявка сохраняется в PostgreSQL и становится доступной для обработки через административную панель.
