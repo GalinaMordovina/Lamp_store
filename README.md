@@ -29,33 +29,30 @@ Lamp Store - это веб-каталог авторских ламп и 3D-мо
 
 
 ## Development History
-Ветка 12: feature/order-api
+Ветка 13: feature/order-api-tests
 
 #### English
 
 Completed tasks:
 
-* created API endpoint for customer order requests;
-* implemented serializer for `OrderRequest`;
-* configured validation of personal data agreement;
-* implemented request creation through Django REST Framework;
-* connected order API URLs;
-* configured public access for request creation;
-* tested API through DRF interface.
+* created a dedicated test structure for the orders application;
+* added API tests for order request creation;
+* added validation tests for personal data agreement;
+* added validation tests for product existence;
+* added validation tests for required customer fields;
+* verified automatic status assignment for new requests.
 
-Implemented endpoint:
+Implemented tests:
 
-* `POST /api/orders/`
-
-Validation:
-
-* customer must provide personal data processing agreement;
-* request status is assigned automatically;
-* creation date is assigned automatically.
+* successful order request creation;
+* request creation without personal data agreement;
+* request creation with invalid product identifier;
+* automatic assignment of status `new`;
+* request creation without customer name.
 
 #### Result:
 
-Customers can now submit order requests directly through the API. Submitted requests are stored in PostgreSQL and become available in the administrative panel for further processing.
+The order request API is covered by automated tests. Core business rules and validation scenarios are verified using pytest and pytest-django.
 
 ---
 
@@ -63,24 +60,21 @@ Customers can now submit order requests directly through the API. Submitted requ
 
 Выполненные задачи:
 
-* создан API-эндпоинт для клиентских заявок;
-* реализован сериализатор `OrderRequest`;
-* настроена валидация согласия на обработку персональных данных;
-* реализовано создание заявок через Django REST Framework;
-* подключены маршруты API заявок;
-* настроен публичный доступ к созданию заявок;
-* проведено тестирование через интерфейс DRF.
+* создана отдельная структура тестов для приложения orders;
+* добавлены тесты API создания заявок;
+* добавлены тесты проверки согласия на обработку персональных данных;
+* добавлены тесты проверки существования товара;
+* добавлены тесты проверки обязательных полей клиента;
+* проверено автоматическое назначение статуса новой заявки.
 
-Реализованный эндпоинт:
+Реализованные тесты:
 
-* `POST /api/orders/`
-
-Валидация:
-
-* клиент обязан подтвердить согласие на обработку персональных данных;
-* статус заявки назначается автоматически;
-* дата создания заполняется автоматически.
+* успешное создание заявки;
+* создание заявки без согласия на обработку персональных данных;
+* создание заявки с несуществующим товаром;
+* автоматическое назначение статуса `new`;
+* создание заявки без имени клиента.
 
 #### Результат:
 
-Пользователь может отправить заявку непосредственно через API. Заявка сохраняется в PostgreSQL и становится доступной для обработки через административную панель.
+API клиентских заявок покрыт автоматизированными тестами. Проверены основные бизнес-правила и сценарии валидации с использованием pytest и pytest-django.
